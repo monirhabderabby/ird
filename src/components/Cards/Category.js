@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import SubCategoriesList from "./SubCategoriesList";
 
 const getData = async (id) => {
   const res = await fetch(`${process.env.backend}/subcategories/${id}`);
@@ -35,17 +36,7 @@ const Category = async ({ name, no_of_dua, no_of_subcat, id }) => {
           </div>
         </div>
       </Link>
-      {true && (
-        <section className="p-[12px] space-y-3 pl-[25px]">
-          {data.map(({ subcat_name_en, id }) => (
-            <Link href="/duas/important?cat=1" key={id}>
-              <p className="text-[14px] text-gray-400 my-2 hover:text-black">
-                -{subcat_name_en}
-              </p>
-            </Link>
-          ))}
-        </section>
-      )}
+      <SubCategoriesList data={data} isOpen={true} catId={id} />
     </div>
   );
 };

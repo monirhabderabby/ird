@@ -1,5 +1,6 @@
 import Categories from "./_components/Categories";
 
+// fetch all categories data
 const getData = async () => {
   const res = await fetch(`${process.env.backend}/categories`, {
     cache: "no-store",
