@@ -29,6 +29,27 @@ const Categories = ({ data }) => {
           />
         ))}
       </section>
+      {/* <section className="h-[calc(100vh-250px)] rounded-b-3xl overflow-y-auto p-2">
+        <Link href="/duas/2">
+          <div className="hover:bg-[#E8F0F5] rounded-xl p-[12px] flex gap-x-2 z-50 cursor-pointer">
+            <Image
+              src="https://res.cloudinary.com/dzlrpspps/image/upload/v1700392817/profile_bq4fpi.jpg"
+              height={56}
+              width={56}
+              alt="icon"
+              className="rounded-xl"
+            />
+            <div className="flex flex-col flex-1">
+              <h3 className="text-black font-semibold text-[14px]">Name</h3>
+              <span className="text-[12px] text-slate-400">Subcategory: 7</span>
+            </div>
+            <div>
+              <h3 className="text-black font-semibold text-[14px]">21</h3>
+              <span className="text-[12px] text-slate-400">Duas</span>
+            </div>
+          </div>
+        </Link>
+      </section> */}
     </div>
   );
 };
