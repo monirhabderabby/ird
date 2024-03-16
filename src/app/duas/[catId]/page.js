@@ -1,11 +1,17 @@
 import DuaCard from "@/components/Cards/DuaCard";
 
-const getData = async () => {
-  const res = await fetch(`${process.env.backend}/`);
+const getData = async (id) => {
+  const res = await fetch(`${process.env.backend}/duasByCategory/${id}`, {
+    cache: "no-store",
+  });
+  const data = await res.json();
+  return data;
 };
 
-const page = ({ params }) => {
+const page = async ({ params }) => {
   const categoryId = params.catId;
+  const data = await getData(categoryId);
+
   return (
     <div>
       <div className="flex-1 overflow-y-auto h-[calc(100vh-130px)]">
@@ -19,9 +25,30 @@ const page = ({ params }) => {
             </p>
           </div>
         </section>
-        <DuaCard />
-        <DuaCard />
-        <DuaCard />
+        <div>
+          {data.map(
+            ({
+              id,
+              dua_name_en,
+              top_en,
+              dua_arabic,
+              transliteration_en,
+              translation_en,
+              refference_en,
+            }) => (
+              <DuaCard
+                key={id}
+                dua_name_en={dua_name_en}
+                index={id}
+                top_en={top_en}
+                dua_arabic={dua_arabic}
+                transliteration_en={transliteration_en}
+                translation_en={translation_en}
+                refference_en={refference_en}
+              />
+            )
+          )}
+        </div>
       </div>
     </div>
   );

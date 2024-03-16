@@ -1,18 +1,17 @@
 "use client";
 import Image from "next/image";
-import Link from "next/link";
 import { useState } from "react";
 
-const getData = async (id) => {
-  const res = await fetch(`${process.env.backend}/subcategories/${id}`);
+// const getData = async (id) => {
+//   const res = await fetch(`${process.env.backend}/subcategories/${id}`);
 
-  return res.json();
-};
+//   return res.json();
+// };
 
-const Category = async ({ name, no_of_dua, no_of_subcat, id }) => {
-  const [isOpen, setOpen] = useState(true);
+const Category = ({ name, no_of_dua, no_of_subcat, id }) => {
+  const [isOpen, setOpen] = useState(false);
 
-  const data = await getData(id);
+  // const data = await getData(id);
 
   return (
     <div>
@@ -20,7 +19,7 @@ const Category = async ({ name, no_of_dua, no_of_subcat, id }) => {
         className={`hover:bg-[#E8F0F5] rounded-xl p-[12px] flex gap-x-2 z-50 cursor-pointer ${
           isOpen ? "bg-[#E8F0F5]" : "bg-white"
         }`}
-        onClick={() => setOpen(!isOpen)}
+        // onClick={() => setOpen(!isOpen)}
       >
         <Image
           src="https://res.cloudinary.com/dzlrpspps/image/upload/v1700392817/profile_bq4fpi.jpg"
@@ -42,13 +41,17 @@ const Category = async ({ name, no_of_dua, no_of_subcat, id }) => {
       </div>
       {isOpen && (
         <section className="p-[12px] space-y-3 pl-[25px]">
-          {data.map(({ subcat_name_en, id }) => (
+          {/* {data.map(({ subcat_name_en, id }) => (
             <Link href="/duas/important?cat=1" key={id}>
               <p className="text-[14px] text-gray-400 my-2 hover:text-black">
                 -{subcat_name_en}
               </p>
             </Link>
-          ))}
+          ))} */}
+          <p>fsdf</p>
+          <p>fsdf</p>
+          <p>fsdf</p>
+          <p>fsdf</p>
         </section>
       )}
     </div>
