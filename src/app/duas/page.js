@@ -2,7 +2,7 @@
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
-const page = () => {
+const Page = () => {
   const router = useRouter();
 
   useEffect(() => {
@@ -11,4 +11,4 @@ const page = () => {
   return <div>Please select a dua</div>;
 };
 
-export default page;
+export default Page;
