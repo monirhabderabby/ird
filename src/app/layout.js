@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Sidebar from "@/components/Sidebar";
+import Settings from "@/components/settings";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
@@ -21,7 +22,7 @@ export default function RootLayout({ children }) {
           <Navbar />
           <section className="w-full gap-x-[30px] h-[calc(100vh-130px)] mt-[100px] flex">
             <div className="flex-1">{children}</div>
-            <div className="w-[330px]">Profile</div>
+            <Settings />
           </section>
         </section>
       </body>

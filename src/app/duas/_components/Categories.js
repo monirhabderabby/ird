@@ -1,7 +1,7 @@
 import Category from "@/components/Cards/Category";
 import { Search } from "lucide-react";
 
-const Categories = () => {
+const Categories = ({ data }) => {
   return (
     <div className="relative h-[calc(100vh-130px)] bg-white rounded-3xl ">
       <section className="relative">
@@ -19,10 +19,15 @@ const Categories = () => {
         </div>
       </section>
       <section className="h-[calc(100vh-250px)] rounded-b-3xl overflow-y-auto p-2">
-        <Category />
-        <Category />
-        <Category />
-        <Category />
+        {data.map(({ id, cat_name_en, no_of_dua, no_of_subcat }) => (
+          <Category
+            key={id}
+            name={cat_name_en}
+            no_of_dua={no_of_dua}
+            no_of_subcat={no_of_subcat}
+            id={id}
+          />
+        ))}
       </section>
     </div>
   );
